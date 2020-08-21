@@ -1,0 +1,25 @@
+@import "reser.css";
+@import "header.css";
+@import "nav.css";
+@import "Dice_generator_10k.css";
+@import "footer.css";
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+}
+
+
+.main_app_box {
+    width: 400px;
+    /*height: 800px;*/
+    background-color:  	#330000;
+    border: black 1px solid;
+    padding: 10px;
+
+}

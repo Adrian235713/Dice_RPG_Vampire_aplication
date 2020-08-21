@@ -1,0 +1,62 @@
+
+
+
+ /*button button  button button button button button button button button button button button button button button*/
+
+
+ .dice_generator button {
+
+    box-shadow:inset 0px 1px 0px 0px #f29c93;
+    background:linear-gradient(to bottom, #fe1a00 5%, #cc2b2b 100%);
+    background-color:#fe1a00;
+    border-radius:6px;
+    border:1px solid #d83526;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:10px;
+    font-weight:bold;
+    padding:6px 8px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #b23e35;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.dice_generator button:hover {
+    background:linear-gradient(to bottom, #cc2b2b 5%, #fe1a00 100%);
+    background-color:#cc2b2b;
+}
+.dice_generator button:active {
+    position:relative;
+    top:1px;
+}
+
+.level_of_difficulty {
+    display: flex;
+    justify-content: center;
+}
+
+.dice_number {
+    display: flex;
+    justify-content: center;
+}
+
+ .Results_all_box{
+     background: white;
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     background: black;
+ }
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+
+
+
+.dice_generator h2 {
+    margin-top: 10px;
+    text-align: center;
+}
