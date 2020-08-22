@@ -20,8 +20,8 @@ const Foorer = () => {
             </div>
 
             <div>
-               <a href="https://www.linkedin.com/in/adrianponiatowski/">
-                   <p>adrianponiatowski24610@gmail.com</p>
+                <a href="https://www.linkedin.com/in/adrianponiatowski/">
+                    <p>adrianponiatowski24610@gmail.com</p>
                 </a>
             </div>
 

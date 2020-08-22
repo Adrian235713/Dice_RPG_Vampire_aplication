@@ -1,6 +1,38 @@
 import React, {Component, useState} from 'react';
 
 
+
+const Masquerade = "The Masquerade is technically outlined in the Traditions, however until the 15th century this was commonly interpreted as not informing mortals of the niceties of vampiric society, how common vampires were or generally making too big a noise. The Tradition was openly flouted by several clans (notably the Tzimisce), while the vampires in more civilized societies would often adhere to it more tightly." +
+    "\n" +
+    "All of this changed with the Inquisition, following the Anarch Revolt, when the true number of vampires became apparent and Rome started to have at the undead igne ferroque, the nascent Camarilla was primarily organized around promulgating and strongly enforcing a Masquerade. History holds that Rafael de Corazon's famous speech in 1450 made enforcing the Masquerade the Camarilla's primary policy."
+
+
+const Domain = "Domain is a physical territory to which a vampire has access for the purpose of feeding and asserting his will. This term is often employed to describe an area claimed by an influential vampire who has gained respect; a Prince will often claim a city as their domain. Some vampires refer to their domain as hunting grounds, and most jealously guard them, even invoking the Second Tradition of the same name to protect their claims."
+
+const Koldun = "Koldun. While all Tzimisce consider themselves scholars, scientists, and sorcerers of a sort, those who call themselves kolduns claim to be the first vampires to have mastered sorcery. It is uncertain if kolduns are a true variation of the blood or a title bestowed upon those who have mastered the eldritch energies of the land, but in any case, kolduns are rare and respected among the Tzimisce. Not all have the aptitude to properly harness and control the land's spirits in the practice of koldunism, and those who fail are incinerated by the unbound power. Those who succeed are Kolduns. Due to their unique ties to their ancestral soil, most Kolduns belong to the Old Clan, and the discipline is almost universal among them; most Tzimisce in the Sabbat lack the spiritual strength to master Koldunism, although exceptions are becoming increasingly common in the modern nights."
+
+const Old_Clan_Tzimisce = "Old Clan Tzimisce. The younger generations of Tzimisce have taken to calling them the Old Clan Tzimisce, members of the Tzimisce clan who did not join the Sabbat or cultivate the use of Vicissitude, but they call themselves the Dracul and do not consider themselves a bloodline. Most of them are old (at least 500 years old, as they predate the formation of the Sabbat), of low generation and rule small domains almost exclusively in Eastern Europe. " +
+    "The majority of Tzimisce elders met Final Death when the clan joined the Sabbat, but a fair number escaped their vindictive progeny. Securing their demesnes against the ravages of the Sabbat, these vampires continued to exist much as they had for centuries, albeit more warily."
+
+
+const  Tzimisce_antitribu= "Tzimisce antitribu. The vast majority of the Tzimisce belong squarely to the Sabbat; the rest are apolitical. There is barely even a handful of Tzimisce in the Camarilla, and those few are only there for personal reasons and tend to leave once their objectives are completed. The presence of the Tremere virtually guarantees that the Tzimisce have no interest in remaining. Although a scant few individual members may join temporarily, it cannot be said that there is enough of an ideological difference, or enough members to declare an antitribu bloodline."
+
+const  Kupala = "Kupala. Legends of the Tzimisce clan recall that the Eldest met Kupala long ago, when it first arrived at Transylvania. It was a slumbering entity, sealed by the Lupines and yearned for freedom. Despite great resistance, [Tzimisce] managed to free Kupala in exchange for mystic knowledge, but even the Antediluvian could not sever the ties between it and the Carpathian land." +
+    "" +
+    "Kupala's presence in the Carpathian soil may have influenced the nature of the Tzimisce clan weakness; the demon is also referenced by name, if not directly invoked, by some kolduns through a number of powerful Koldunic Sorcery rituals. Kupala, in the guise of Root of All, influenced the founder Tremere and his conspirators in House Tremere to found the chantry of Ceoris and, later, to transform themselves into vampires." +
+    "" +
+    "The demon created a Sacred Fire-Flower, which is said to bind or loose demons and also might have been the fundamental stone to the ritual of Vaulderie, practised by the Sabbat. It also may have manipulated the Cathedral of Flesh to consume its master, the methuselah Yorak."
+
+
+const Baali = "The Baali are a bloodline of vampires associated with demon worship. Because of their affinity with the unholy, the Baali are particularly vulnerable to holy iconography, holy ground and holy water. They are highly vulnerable to True Faith." +
+    "" +
+    "Some versions present the true purpose of the Baali as keeping demons sleeping by feeding them with carnage and destruction. But most presentations show them as infernalists, using demon worship to gain additional power." +
+    "" +
+    "They have a somewhat complex heritage, appearing at times as a bloodline and at times as a clan. There is some indication that they may be a bloodline of the Salubri, Cappadocians, or Tzimisce, although one earlier source suggested they may instead be descendants or even predecessors of the Gangrel line. They also recruit vampires from other clans to become Baali via a dark thaumaturgic initiation, further confusing the issue and making them also a sect or cult."
+
+
+
+
 const Dice_generator_10k = () => {
 
     var all_dice_rolls = [];
@@ -10,6 +42,12 @@ const Dice_generator_10k = () => {
     var suces = null;
 
     var CRITICAL_FAILURE = "";
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+    var all_curiosities = [Masquerade,Domain,Koldun,Old_Clan_Tzimisce,Tzimisce_antitribu,Kupala,Baali];
+
 
     //---------------------------------------------------------------------------------------------------------------
     // Number_draw Number_draw  Number_draw  Number_draw  Number_draw  Number_draw  Number_draw  Number_draw
@@ -109,7 +147,6 @@ const Dice_generator_10k = () => {
     }
 
 
-
     //---------------------------------------------------------------------------------------------------------------
     // Make a throw Make a throw Make a throw Make a throw Make a throw Make a throw Make a throw Make a throw
 
@@ -144,9 +181,20 @@ const Dice_generator_10k = () => {
             }
         }
 
+        var x = 0;
         if (failure > suces) {
             CRITICAL_FAILURE = "CRITICAL FAILURE XD";
+            x = 1;
         }
+
+        if (x === 0){
+
+            let los_number = Math.floor(Math.random() * 7);
+            let x = all_curiosities[los_number];
+            CRITICAL_FAILURE = x;
+
+        }
+
 
 
         let all_successes_crit_failure = [...all_successes];
@@ -233,15 +281,13 @@ const Dice_generator_10k = () => {
         window.location.reload();
 
 
-        // all_dice_rolls = [];
-        // all_successes = [];
-        // failure = null;
-        // critic = null;
-        // suces = null;
+        all_dice_rolls = [];
+        all_successes = [];
+        failure = null;
+        critic = null;
+        suces = null;
 
     }
-
-
 
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -250,82 +296,92 @@ const Dice_generator_10k = () => {
     // return Components return Components return Components return Components return Components return Components
 
 
-
-
     const x_all_dice_rolls = localStorage.getItem('all_dice_rolls');
     const x_all_successes_crit_failure_which_pass_level_of_difficulty = localStorage.getItem('all_successes_crit_failure_which_pass_level_of_difficulty');
     const x_CRITICAL_FAILURE = localStorage.getItem('CRITICAL_FAILURE');
+
+
+
+    const Next_draw = () => {
+        console.log("sdasdasdasd");
+
+        localStorage.clear();
+        window.location.reload();
+        all_dice_rolls = [];
+        all_successes = [];
+        failure = null;
+        critic = null;
+        suces = null;
+    }
+
+
 
     return (
         <div className={'dice_generator'}>
 
             <h2>Dice Number</h2>
 
-                <div className={'dice_number'}>
+            <div className={'dice_number'}>
 
-                    <button onClick={get_dice_Number_draw_0}>{dice_Number_draw[0]}</button>
-                    <button onClick={get_dice_Number_draw_1}>{dice_Number_draw[1]}</button>
-                    <button onClick={get_dice_Number_draw_2}>{dice_Number_draw[2]}</button>
-                    <button onClick={get_dice_Number_draw_3}>{dice_Number_draw[3]}</button>
-                    <button onClick={get_dice_Number_draw_4}>{dice_Number_draw[4]}</button>
-                    <button onClick={get_dice_Number_draw_5}>{dice_Number_draw[5]}</button>
-                    <button onClick={get_dice_Number_draw_6}>{dice_Number_draw[6]}</button>
-                    <button onClick={get_dice_Number_draw_7}>{dice_Number_draw[7]}</button>
-                    <button onClick={get_dice_Number_draw_8}>{dice_Number_draw[8]}</button>
-                    <button onClick={get_dice_Number_draw_9}>{dice_Number_draw[9]}</button>
-                    <button onClick={get_dice_Number_draw_10}>{dice_Number_draw[10]}</button>
-                    <button onClick={get_dice_Number_draw_11}>{dice_Number_draw[11]}</button>
-                    <button onClick={get_dice_Number_draw_12}>{dice_Number_draw[12]}</button>
-                    {/*<button onClick={get_dice_Number_draw_13}>{dice_Number_draw[13]}</button>*/}
-                    {/*<button onClick={get_dice_Number_draw_14}>{dice_Number_draw[14]}</button>*/}
+                <button onClick={get_dice_Number_draw_0}>{dice_Number_draw[0]}</button>
+                <button onClick={get_dice_Number_draw_1}>{dice_Number_draw[1]}</button>
+                <button onClick={get_dice_Number_draw_2}>{dice_Number_draw[2]}</button>
+                <button onClick={get_dice_Number_draw_3}>{dice_Number_draw[3]}</button>
+                <button onClick={get_dice_Number_draw_4}>{dice_Number_draw[4]}</button>
+                <button onClick={get_dice_Number_draw_5}>{dice_Number_draw[5]}</button>
+                <button onClick={get_dice_Number_draw_6}>{dice_Number_draw[6]}</button>
+                <button onClick={get_dice_Number_draw_7}>{dice_Number_draw[7]}</button>
+                <button onClick={get_dice_Number_draw_8}>{dice_Number_draw[8]}</button>
+                <button onClick={get_dice_Number_draw_9}>{dice_Number_draw[9]}</button>
+                <button onClick={get_dice_Number_draw_10}>{dice_Number_draw[10]}</button>
+                <button onClick={get_dice_Number_draw_11}>{dice_Number_draw[11]}</button>
+                <button onClick={get_dice_Number_draw_12}>{dice_Number_draw[12]}</button>
+                {/*<button onClick={get_dice_Number_draw_13}>{dice_Number_draw[13]}</button>*/}
+                {/*<button onClick={get_dice_Number_draw_14}>{dice_Number_draw[14]}</button>*/}
 
-                </div>
+            </div>
 
             <h2>Level of Difficulty</h2>
 
-                <div className={'level_of_difficulty'}>
+            <div className={'level_of_difficulty'}>
 
-                    <button onClick={get_level_of_difficulty_number_0}>2</button>
-                    <button onClick={get_level_of_difficulty_number_1}>3</button>
-                    <button onClick={get_level_of_difficulty_number_2}>4</button>
-                    <button onClick={get_level_of_difficulty_number_3}>5</button>
-                    <button onClick={get_level_of_difficulty_number_4}>6</button>
-                    <button onClick={get_level_of_difficulty_number_5}>7</button>
-                    <button onClick={get_level_of_difficulty_number_6}>8</button>
-                    <button onClick={get_level_of_difficulty_number_7}>9</button>
-                    <button onClick={get_level_of_difficulty_number_8}>10</button>
+                <button onClick={get_level_of_difficulty_number_0}>2</button>
+                <button onClick={get_level_of_difficulty_number_1}>3</button>
+                <button onClick={get_level_of_difficulty_number_2}>4</button>
+                <button onClick={get_level_of_difficulty_number_3}>5</button>
+                <button onClick={get_level_of_difficulty_number_4}>6</button>
+                <button onClick={get_level_of_difficulty_number_5}>7</button>
+                <button onClick={get_level_of_difficulty_number_6}>8</button>
+                <button onClick={get_level_of_difficulty_number_7}>9</button>
+                <button onClick={get_level_of_difficulty_number_8}>10</button>
 
-                </div>
+            </div>
 
 
             <div className={'Results_all_box'}>
 
-                    <button onClick={Make_a_throw}>Make a Throw</button>
+                <button onClick={Make_a_throw}>Make a Throw</button>
 
 
-                    <div className={'Results'}>
-                        <h2>All Dice: {x_all_dice_rolls}</h2>
-                    </div>
+                <div className={'Results'}>
+                    <h2>All Dice: {x_all_dice_rolls}</h2>
+                </div>
 
 
-                    <div className={'final_result'}>
-                        <h2>Final Result: {x_all_successes_crit_failure_which_pass_level_of_difficulty}</h2>
-                    </div>
+                <div className={'final_result'}>
+                    <h2>Final Result: {x_all_successes_crit_failure_which_pass_level_of_difficulty}</h2>
+                </div>
 
 
-                    <div>
-                        <h2>{x_CRITICAL_FAILURE}</h2>
-                    </div>
+                <div>
+                    <h2>{x_CRITICAL_FAILURE}</h2>
+                </div>
 
 
-
-
-                <button className={'Next_draw'}>Next Draw</button>
-
+                <button onClick={Next_draw} className={'Next_draw'}>Next Draw</button>
 
 
             </div>
-
 
 
         </div>

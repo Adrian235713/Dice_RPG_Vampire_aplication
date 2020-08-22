@@ -1,0 +1,26 @@
+.Basic_rules_main_div {
+    padding: 2%;
+}
+
+.Basic_rules_main_div div {
+    border-bottom: white 1px solid;
+    padding: 20px;
+    color: white;
+    text-align: justify;
+}
+
+.Basic_rules_main_div li {
+    padding: 8px;
+    text-align: center;
+}
+
+.Basic_rules_main_div img {
+    width: 90%;
+    height: 60%;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 10px;
+}
