@@ -1,8 +1,6 @@
 import React, {Component, useState} from 'react';
 
-
 // --------------------------------------------------------------------------------------------------------------
-
 const Multiply_Actions_p_1 = <p>
     Occasionally, a player will want her character to perform more than one action in a turn - for example, firing a gun
     at two different targets, or climbing a ledge while kicking at pursuers below. In such situations, the player can
@@ -23,7 +21,6 @@ const Multiply_Actions_p_3 = <p>
     plus one for being the second multiple action), for a final dice pool of 2. The final dodge has a dice pool of 1 (6,
     minus three for the number of actions, minus an additional two for being the third action attempted). Hall had
     better be pretty lucky.
-
 </p>
 
 const Multiply_Actions_p_4 = <p>
@@ -31,14 +28,9 @@ const Multiply_Actions_p_4 = <p>
     These extra actions may not themselves be divided into multiple actions.
 </p>
 
-
-
 const img_2 = <img src="../img/img2.jpg" alt=""/>
-
 // --------------------------------------------------------------------------------------------------------------
-
-const Multiply_Actions = () => {
-
+const MultiplyActions = () => {
 
     return (
 
@@ -50,9 +42,7 @@ const Multiply_Actions = () => {
             <div>{Multiply_Actions_p_4}</div>
 
         </div>
-
-
     )
 }
 
-export default Multiply_Actions;
+export default MultiplyActions;

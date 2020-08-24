@@ -1,8 +1,6 @@
 import React, {Component, useState} from 'react';
 
 // -----------------------------------------------------------------------------------------------------------
-
-
 const rules_text_0 = <ul>
 
     <li>Set the difficulty level</li>
@@ -13,7 +11,6 @@ const rules_text_0 = <ul>
     <li>If the number 1 is greater than the number of successes you draw Critical Failure / Botches XD</li>
 
 </ul>
-
 
 const rules_text_1 = <p>Although your character's personality is limited only by your imagination, his capabilities
     are defined by his Traits - all of his innate and learned aptitudes and abilities. Each Trait is described by a
@@ -60,13 +57,10 @@ const rules_text_5 = <p>
 </p>
 
 const img_1 = <img src="../img/img5.jpg" alt=""/>
-
-
 const img_2 = <img src="../img/ph2.jpg" alt=""/>
-
 // -----------------------------------------------------------------------------------------------------------
 
-const Basic_rules = () => {
+const BasicRules = () => {
 
     return (
 
@@ -81,11 +75,7 @@ const Basic_rules = () => {
             <div>{rules_text_4}</div>
             <div>{rules_text_5}</div>
 
-            
-
         </div>
     )
-
 }
-
-export default Basic_rules;
+export default BasicRules;

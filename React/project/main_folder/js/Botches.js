@@ -1,6 +1,5 @@
 import React, {Component, useState} from 'react';
 
-
 const Botches_p_1 = <p>
     Bad luck can ruin anything. One more basic rule about rolling dice is the "rule of one," or (spoken in a despairing
     tone) "botching." Whenever one of the dice comes up as a "1," it cancels out a success. Completely. Take the die
@@ -46,16 +45,13 @@ const Botches_p_6 = <p>
     that the pack hasn't found it yet...
 </p>
 
-
 const img_1 = <img src="../img/img4.jpg" alt=""/>
 const img_2 = <img src="../img/img3.jpg" alt=""/>
 const img_3 = <img src="../img/bllod4.jpg" alt=""/>
 
-
 const Botches = () => {
 
     return (
-
         <div className={'Botches_main_div'}>
 
             <div>{Botches_p_1}</div>
@@ -68,9 +64,7 @@ const Botches = () => {
             <div>{img_3}</div>
             <div>{Botches_p_6}</div>
 
-
         </div>
     )
 }
-
 export default Botches;

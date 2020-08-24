@@ -13,10 +13,8 @@
 .Botches_main_div img {
     width: 90%;
     height: 60%;
-
     display: block;
     margin-left: auto;
     margin-right: auto;
-
     border-radius: 10px;
 }

@@ -1,11 +1,9 @@
 import React, {Component, useState} from 'react';
 
-
-
+//---------------------------------------------------------------------------------------------------------------
 const Masquerade = "The Masquerade is technically outlined in the Traditions, however until the 15th century this was commonly interpreted as not informing mortals of the niceties of vampiric society, how common vampires were or generally making too big a noise. The Tradition was openly flouted by several clans (notably the Tzimisce), while the vampires in more civilized societies would often adhere to it more tightly." +
     "\n" +
     "All of this changed with the Inquisition, following the Anarch Revolt, when the true number of vampires became apparent and Rome started to have at the undead igne ferroque, the nascent Camarilla was primarily organized around promulgating and strongly enforcing a Masquerade. History holds that Rafael de Corazon's famous speech in 1450 made enforcing the Masquerade the Camarilla's primary policy."
-
 
 const Domain = "Domain is a physical territory to which a vampire has access for the purpose of feeding and asserting his will. This term is often employed to describe an area claimed by an influential vampire who has gained respect; a Prince will often claim a city as their domain. Some vampires refer to their domain as hunting grounds, and most jealously guard them, even invoking the Second Tradition of the same name to protect their claims."
 
@@ -14,24 +12,20 @@ const Koldun = "Koldun. While all Tzimisce consider themselves scholars, scienti
 const Old_Clan_Tzimisce = "Old Clan Tzimisce. The younger generations of Tzimisce have taken to calling them the Old Clan Tzimisce, members of the Tzimisce clan who did not join the Sabbat or cultivate the use of Vicissitude, but they call themselves the Dracul and do not consider themselves a bloodline. Most of them are old (at least 500 years old, as they predate the formation of the Sabbat), of low generation and rule small domains almost exclusively in Eastern Europe. " +
     "The majority of Tzimisce elders met Final Death when the clan joined the Sabbat, but a fair number escaped their vindictive progeny. Securing their demesnes against the ravages of the Sabbat, these vampires continued to exist much as they had for centuries, albeit more warily."
 
+const Tzimisce_antitribu = "Tzimisce antitribu. The vast majority of the Tzimisce belong squarely to the Sabbat; the rest are apolitical. There is barely even a handful of Tzimisce in the Camarilla, and those few are only there for personal reasons and tend to leave once their objectives are completed. The presence of the Tremere virtually guarantees that the Tzimisce have no interest in remaining. Although a scant few individual members may join temporarily, it cannot be said that there is enough of an ideological difference, or enough members to declare an antitribu bloodline."
 
-const  Tzimisce_antitribu= "Tzimisce antitribu. The vast majority of the Tzimisce belong squarely to the Sabbat; the rest are apolitical. There is barely even a handful of Tzimisce in the Camarilla, and those few are only there for personal reasons and tend to leave once their objectives are completed. The presence of the Tremere virtually guarantees that the Tzimisce have no interest in remaining. Although a scant few individual members may join temporarily, it cannot be said that there is enough of an ideological difference, or enough members to declare an antitribu bloodline."
-
-const  Kupala = "Kupala. Legends of the Tzimisce clan recall that the Eldest met Kupala long ago, when it first arrived at Transylvania. It was a slumbering entity, sealed by the Lupines and yearned for freedom. Despite great resistance, [Tzimisce] managed to free Kupala in exchange for mystic knowledge, but even the Antediluvian could not sever the ties between it and the Carpathian land." +
+const Kupala = "Kupala. Legends of the Tzimisce clan recall that the Eldest met Kupala long ago, when it first arrived at Transylvania. It was a slumbering entity, sealed by the Lupines and yearned for freedom. Despite great resistance, [Tzimisce] managed to free Kupala in exchange for mystic knowledge, but even the Antediluvian could not sever the ties between it and the Carpathian land." +
     "" +
     "Kupala's presence in the Carpathian soil may have influenced the nature of the Tzimisce clan weakness; the demon is also referenced by name, if not directly invoked, by some kolduns through a number of powerful Koldunic Sorcery rituals. Kupala, in the guise of Root of All, influenced the founder Tremere and his conspirators in House Tremere to found the chantry of Ceoris and, later, to transform themselves into vampires." +
     "" +
     "The demon created a Sacred Fire-Flower, which is said to bind or loose demons and also might have been the fundamental stone to the ritual of Vaulderie, practised by the Sabbat. It also may have manipulated the Cathedral of Flesh to consume its master, the methuselah Yorak."
-
 
 const Baali = "The Baali are a bloodline of vampires associated with demon worship. Because of their affinity with the unholy, the Baali are particularly vulnerable to holy iconography, holy ground and holy water. They are highly vulnerable to True Faith." +
     "" +
     "Some versions present the true purpose of the Baali as keeping demons sleeping by feeding them with carnage and destruction. But most presentations show them as infernalists, using demon worship to gain additional power." +
     "" +
     "They have a somewhat complex heritage, appearing at times as a bloodline and at times as a clan. There is some indication that they may be a bloodline of the Salubri, Cappadocians, or Tzimisce, although one earlier source suggested they may instead be descendants or even predecessors of the Gangrel line. They also recruit vampires from other clans to become Baali via a dark thaumaturgic initiation, further confusing the issue and making them also a sect or cult."
-
-
-
+//---------------------------------------------------------------------------------------------------------------
 
 const Dice_generator_10k = () => {
 
@@ -40,17 +34,10 @@ const Dice_generator_10k = () => {
     var critic = null;
     var failure = null;
     var suces = null;
-
     var CRITICAL_FAILURE = "";
 
-    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    var all_curiosities = [Masquerade, Domain, Koldun, Old_Clan_Tzimisce, Tzimisce_antitribu, Kupala, Baali];
 
-
-    var all_curiosities = [Masquerade,Domain,Koldun,Old_Clan_Tzimisce,Tzimisce_antitribu,Kupala,Baali];
-
-
-    //---------------------------------------------------------------------------------------------------------------
-    // Number_draw Number_draw  Number_draw  Number_draw  Number_draw  Number_draw  Number_draw  Number_draw
     let [dice_Number_draw, set_Dice_Number_Draw] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])
 
     var [Number_draw, set_Number_draw] = useState(() => {
@@ -102,12 +89,10 @@ const Dice_generator_10k = () => {
     const get_dice_Number_draw_14 = () => {
         set_Number_draw(Number_draw = dice_Number_draw[14]);
     }
-
     //---------------------------------------------------------------------------------------------------------------
     // level of difficulty /  level of difficulty /  level of difficulty /  level of difficulty /  level of difficulty
 
     let [level_of_difficulty_number, set_Level_of_difficulty_number] = useState([2, 3, 4, 5, 6, 7, 8, 9, 10])
-
     let [difficulty_input, setDifficulty_Input] = useState(null)
 
     const get_level_of_difficulty_number_0 = () => {
@@ -146,16 +131,10 @@ const Dice_generator_10k = () => {
         setDifficulty_Input(difficulty_input = level_of_difficulty_number[8]);
     }
 
-
     //---------------------------------------------------------------------------------------------------------------
     // Make a throw Make a throw Make a throw Make a throw Make a throw Make a throw Make a throw Make a throw
 
-
-    //---------------------------------------------------------------------------------------------------------------
-
-
     function Make_a_throw() {
-
 
         for (let i = 0; i < Number_draw; i++) {
 
@@ -163,7 +142,6 @@ const Dice_generator_10k = () => {
 
             all_dice_rolls.push(los_number);
         }
-
 
         for (let i = 0; i <= all_dice_rolls.length; i++) {
 
@@ -183,19 +161,22 @@ const Dice_generator_10k = () => {
 
         var x = 0;
         if (failure > suces) {
-            CRITICAL_FAILURE = "CRITICAL FAILURE XD";
+            CRITICAL_FAILURE = "CRITICAL FAILURE XD --> " +
+                "Unlike a normal failure, in which a character merely fails to achieve their desired result, a " +
+                "botch has actively negative consequences. For example, botching a roll when shooting a gun may result " +
+                "in the gun jamming, rather than merely missing the target, while botching a roll to disarm a security " +
+                "system might trigger the alarm or even result in the character getting an electrical shock " +
+                "from the system. The exact details are usually left up to the Storyteller to decide.";
             x = 1;
         }
 
-        if (x === 0){
+        if (x === 0) {
 
             let los_number = Math.floor(Math.random() * 7);
             let x = all_curiosities[los_number];
             CRITICAL_FAILURE = x;
 
         }
-
-
 
         let all_successes_crit_failure = [...all_successes];
 
@@ -237,11 +218,9 @@ const Dice_generator_10k = () => {
             if (all_successes_crit_failure[i] >= difficulty_input) {
                 all_successes_crit_failure_which_pass_level_of_difficulty.push(all_successes_crit_failure[i]);
             }
-
         }
 
         if (failure > all_successes_crit_failure_which_pass_level_of_difficulty.length)
-
             all_dice_rolls.sort(function (a, b) {
                 return a - b;
             });
@@ -255,7 +234,6 @@ const Dice_generator_10k = () => {
             return a - b;
         });
 
-
         console.log("-----------------------------------------------------------")
         console.log("all_dice_rolls => ", all_dice_rolls);
         console.log("all_successes => ", all_successes);
@@ -263,7 +241,6 @@ const Dice_generator_10k = () => {
         console.log("all_successes_crit_failure_which_pass_level_of_difficulty => ", all_successes_crit_failure_which_pass_level_of_difficulty);
         console.log("Success numbers: ", all_successes_crit_failure_which_pass_level_of_difficulty.length);
         console.log("------------------------------------------------------------")
-
 
         localStorage.setItem('all_dice_rolls', JSON.stringify(all_dice_rolls));
         localStorage.setItem('all_successes', JSON.stringify(all_successes));
@@ -273,38 +250,25 @@ const Dice_generator_10k = () => {
         localStorage.setItem('suces', JSON.stringify(suces));
         localStorage.setItem('failure', JSON.stringify(failure));
         localStorage.setItem('critic', JSON.stringify(critic));
-
-
         localStorage.setItem('CRITICAL_FAILURE', JSON.stringify(CRITICAL_FAILURE));
-
-
         window.location.reload();
-
 
         all_dice_rolls = [];
         all_successes = [];
         failure = null;
         critic = null;
         suces = null;
-
     }
-
-
-// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     //---------------------------------------------------------------------------------------------------------------
     // return Components return Components return Components return Components return Components return Components
-
 
     const x_all_dice_rolls = localStorage.getItem('all_dice_rolls');
     const x_all_successes_crit_failure_which_pass_level_of_difficulty = localStorage.getItem('all_successes_crit_failure_which_pass_level_of_difficulty');
     const x_CRITICAL_FAILURE = localStorage.getItem('CRITICAL_FAILURE');
 
-
-
     const Next_draw = () => {
         console.log("sdasdasdasd");
-
         localStorage.clear();
         window.location.reload();
         all_dice_rolls = [];
@@ -313,8 +277,6 @@ const Dice_generator_10k = () => {
         critic = null;
         suces = null;
     }
-
-
 
     return (
         <div className={'dice_generator'}>
@@ -357,37 +319,28 @@ const Dice_generator_10k = () => {
 
             </div>
 
-
             <div className={'Results_all_box'}>
 
                 <button onClick={Make_a_throw}>Make a Throw</button>
-
 
                 <div className={'Results'}>
                     <h2>All Dice: {x_all_dice_rolls}</h2>
                 </div>
 
-
                 <div className={'final_result'}>
                     <h2>Final Result: {x_all_successes_crit_failure_which_pass_level_of_difficulty}</h2>
                 </div>
-
 
                 <div>
                     <h2>{x_CRITICAL_FAILURE}</h2>
                 </div>
 
-
-                <button onClick={Next_draw} className={'Next_draw'}>Next Draw</button>
+                <button onClick={Next_draw} className={'Next_draw'}>Reset</button>
 
 
             </div>
-
-
         </div>
     )
-
-
 }
 
 export default Dice_generator_10k;

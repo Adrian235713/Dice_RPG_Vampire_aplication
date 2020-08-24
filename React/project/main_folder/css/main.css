@@ -1,58 +1,10 @@
 @import "reser.css";
+@import "bodyAndMainAppBox.css";
 @import "header.css";
 @import "nav.css";
-@import "Dice_generator_10k.css";
+@import "diceGenerator_10k.css";
 @import "footer.css";
-@import "Basic_rules.css";
-@import "Multiply_Actions.css";
-@import "Botches.css";
+@import "basicRules.css";
+@import "multiplyActions.css";
+@import "botches.css";
 
-
-* {
-    font-family: 'Russo One', sans-serif;
-}
-
-
-html {
-    background-color: black;
-}
-
-body {
-
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    background-image: url("../img/ssss.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    box-sizing: border-box;
-
-
-
-}
-
-
-.main_app_box {
-    width: 480px;
-    /*height: 800px;*/
-    border: black 1px solid;
-    padding: 10px;
-
-
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, rgba(52,9,9,1) 30%, rgba(83,0,0,1) 66%, rgba(0,0,0,1) 100%, rgba(77,0,0,1) 100%, rgba(113,0,0,1) 100%, rgba(255,0,0,1) 100%, rgba(0,0,0,1) 100%);
-
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    border-radius: 10px;
-
-}
