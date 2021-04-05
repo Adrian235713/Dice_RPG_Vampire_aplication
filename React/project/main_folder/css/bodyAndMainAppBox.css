@@ -1,37 +1,46 @@
 * {
-    font-family: 'Russo One', sans-serif;
+  font-family: "Russo One", sans-serif;
 }
 
 html {
-    background-color: black;
+  background-color: black;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url("../img/backgroung.png"),
-    linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(52, 9, 9, 1) 30%,
-            rgba(83, 0, 0, 1) 66%, rgba(0, 0, 0, 1) 100%, rgba(77, 0, 0, 1) 100%, rgba(113, 0, 0, 1) 100%,
-            rgba(255, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("../img/backgroung.png");
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  box-sizing: border-box;
 }
 
 .main_app_box {
-    width: 480px;
-    border: black 1px solid;
-    padding: 10px;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(52, 9, 9, 1) 30%,
-    rgba(83, 0, 0, 1) 66%, rgba(0, 0, 0, 1) 100%, rgba(77, 0, 0, 1) 100%, rgba(113, 0, 0, 1) 100%,
-    rgba(255, 0, 0, 1) 100%, rgba(0, 0, 0, 1) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 10px;
+  width: 480px;
+  min-height: 100vh;
+  border: black 1px solid;
+  padding: 10px;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(52, 9, 9, 1) 30%,
+    rgba(83, 0, 0, 1) 66%,
+    rgba(0, 0, 0, 1) 100%,
+    rgba(77, 0, 0, 1) 100%,
+    rgba(113, 0, 0, 1) 100%,
+    rgba(255, 0, 0, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
 }
